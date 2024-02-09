@@ -1,9 +1,6 @@
 package tn.esprit.tic.ds.demo.entity;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.util.ArrayList;
+import jakarta.persistence.*;
 
 @Entity
 public class Restauration {
@@ -12,4 +9,8 @@ public class Restauration {
     public Long idRestaurant;
     public String   nom;
     public  Long    nbPlacesMax;
+    @ManyToOne
+    ChaineRestauration chaineRestauration;
+    @OneToMany
+    ArrayList<Menu> menus;
 }

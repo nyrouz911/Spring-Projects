@@ -1,9 +1,6 @@
 package tn.esprit.tic.ds.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Composant {
@@ -12,4 +9,8 @@ public class Composant {
     public Long idComposant;
     public String nomComposant;
     public Float prix;
+    @ManyToOne
+    Menu menu;
+    @OneToOne
+    Client client;
 }

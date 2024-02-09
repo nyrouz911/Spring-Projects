@@ -1,11 +1,10 @@
 package tn.esprit.tic.ds.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 @Entity
 public class ChaineRestauration {
     @Id
@@ -13,4 +12,6 @@ public class ChaineRestauration {
     public Long idChaineRestauration;
     public String   libelle;
     public LocalDate    dateCreation;
+    @OneToMany(mappedBy = "chainerestauration")
+    ArrayList<Restauration> restaurants;
 }

@@ -1,9 +1,8 @@
 package tn.esprit.tic.ds.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 
 @Entity
 public class Menu {
@@ -13,4 +12,10 @@ public class Menu {
     public String libelleMenu;
     public TypeMenu typeMenu;
     public Float prixTotal;
+    @ManyToMany
+    private ArrayList<ChefCuisinier> chefCuisiniers;
+    @OneToMany
+    private ArrayList<Commande> commandes;
+    @OneToMany
+    private ArrayList<Composant> composants;
 }
