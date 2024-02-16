@@ -12,10 +12,10 @@ public class Menu {
     public String libelleMenu;
     public TypeMenu typeMenu;
     public Float prixTotal;
-    @ManyToMany
+    @ManyToMany(mappedBy = "menus")
     private ArrayList<ChefCuisinier> chefCuisiniers;
-    @OneToMany
+    @OneToMany(mappedBy = "menus")
     private ArrayList<Commande> commandes;
-    @OneToMany
+    @OneToMany(mappedBy = "menu")
     private ArrayList<Composant> composants;
 }

@@ -12,6 +12,6 @@ public class ChaineRestauration {
     public Long idChaineRestauration;
     public String   libelle;
     public LocalDate    dateCreation;
-    @OneToMany(mappedBy = "chainerestauration")
+    @OneToMany(mappedBy = "chaineRestauration")
     ArrayList<Restauration> restaurants;
 }

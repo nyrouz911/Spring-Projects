@@ -12,8 +12,8 @@ public class Client {
     public String   identifiant;
     @Temporal(TemporalType.DATE)
     public Date DatePremiereVisite;
-    @OneToMany(mappedBy = "menu")
+    @OneToMany(mappedBy = "client")
     private ArrayList<Commande> commandes;
-    @OneToMany(mappedBy = "menu")
+    @OneToMany(mappedBy = "client")
     private ArrayList<Composant> composants;
 }
