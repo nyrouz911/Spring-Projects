@@ -1,10 +1,12 @@
 package tn.esprit.tic.ds.demo.entity;
 import jakarta.persistence.*;
 import org.hibernate.cfg.DefaultComponentSafeNamingStrategy;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 @Entity
-public class Client {
+public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idClient")

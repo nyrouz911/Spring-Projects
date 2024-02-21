@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import jakarta.persistence.*;
 
 @Entity
-public class Restauration {
+public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long idRestaurant;
