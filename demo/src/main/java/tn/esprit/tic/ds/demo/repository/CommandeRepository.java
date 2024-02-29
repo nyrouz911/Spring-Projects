@@ -11,5 +11,4 @@ public interface CommandeRepository extends CrudRepository<Commande,Long> {
     List<Commande> findByDateCommandeBetween(Date dFrom, Date dTo);
     List<Commande> findByDateCommandeOrderByNoteBetween(Date dFrom, Date dTo);
 
-
 }
