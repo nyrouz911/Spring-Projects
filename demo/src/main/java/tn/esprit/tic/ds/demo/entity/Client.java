@@ -1,5 +1,8 @@
 package tn.esprit.tic.ds.demo.entity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.cfg.DefaultComponentSafeNamingStrategy;
 
 import java.io.Serializable;

@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.tic.ds.demo.entity.Client;
 @Repository
 public interface ClientRepository extends CrudRepository <Client,Long> {
+
 }

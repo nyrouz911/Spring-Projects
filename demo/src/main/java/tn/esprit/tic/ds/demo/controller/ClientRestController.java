@@ -40,4 +40,6 @@ public class ClientRestController {
         Client client= clientService.updateClient(c);
         return client;
     }
+
+
 }
