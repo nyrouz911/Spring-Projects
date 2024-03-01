@@ -9,6 +9,6 @@ public interface IClientService {
     Client addClient(Client e);
     Client updateClient(Client e);
     Client retrieveClient(Long idClient);
-    void removeClient(Long idClient);
+    void deleteClient(Long idClient);
     List<Client> addClients(List<Client> clients);
 }

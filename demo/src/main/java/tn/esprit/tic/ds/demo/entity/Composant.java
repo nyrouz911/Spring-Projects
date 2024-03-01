@@ -13,4 +13,5 @@ public class Composant {
     Menu menu;
     @OneToOne
     Client client;
+
 }

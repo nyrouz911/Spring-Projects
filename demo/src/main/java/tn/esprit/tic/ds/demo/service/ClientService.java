@@ -1,12 +1,17 @@
 package tn.esprit.tic.ds.demo.service;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import tn.esprit.tic.ds.demo.entity.Client;
 import tn.esprit.tic.ds.demo.repository.ClientRepository;
 
 import java.util.List;
 
+@Service
+@AllArgsConstructor
 public class ClientService implements IClientService{
     ClientRepository clientRepository;
+
 
     @Override
     public List<Client> retrieveAllClients() {
@@ -29,7 +34,7 @@ public class ClientService implements IClientService{
     }
 
     @Override
-    public void removeClient(Long idClient) {
+    public void deleteClient(Long idClient) {
          clientRepository.deleteById(idClient);
     }
 
