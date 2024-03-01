@@ -5,6 +5,8 @@ import org.hibernate.cfg.DefaultComponentSafeNamingStrategy;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 public class Client implements Serializable {
     @Id
@@ -15,9 +17,11 @@ public class Client implements Serializable {
     @Temporal(TemporalType.DATE)
     public Date DatePremiereVisite;
     @OneToMany(mappedBy = "client")
-    private ArrayList<Commande> commandes;
+    private List<Commande> commandes;
     @OneToMany(mappedBy = "client")
-    private ArrayList<Composant> composants;
+    private List<Composant> composants;
+
+    //getters and setters
 
     public Long getIdClient() {
         return idClient;
@@ -31,11 +35,11 @@ public class Client implements Serializable {
         return DatePremiereVisite;
     }
 
-    public ArrayList<Commande> getCommandes() {
+    public List<Commande> getCommandes() {
         return commandes;
     }
 
-    public ArrayList<Composant> getComposants() {
+    public List<Composant> getComposants() {
         return composants;
     }
 
@@ -51,11 +55,11 @@ public class Client implements Serializable {
         DatePremiereVisite = datePremiereVisite;
     }
 
-    public void setCommandes(ArrayList<Commande> commandes) {
+    public void setCommandes(List<Commande> commandes) {
         this.commandes = commandes;
     }
 
-    public void setComposants(ArrayList<Composant> composants) {
+    public void setComposants(List<Composant> composants) {
         this.composants = composants;
     }
 }
