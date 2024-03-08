@@ -1,10 +1,19 @@
 package tn.esprit.tic.ds.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,9 +22,9 @@ public class Menu {
     public TypeMenu typeMenu;
     public Float prixTotal;
     @ManyToMany(mappedBy = "menus")
-    private ArrayList<ChefCuisinier> chefCuisiniers;
+    private List<ChefCuisinier> chefCuisiniers;
     @OneToMany(mappedBy = "menus")
-    private ArrayList<Commande> commandes;
+    private List<Commande> commandes;
     @OneToMany(mappedBy = "menu")
-    private ArrayList<Composant> composants;
+    private List<Composant> composants;
 }
