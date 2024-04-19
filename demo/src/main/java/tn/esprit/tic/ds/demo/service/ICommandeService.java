@@ -19,4 +19,5 @@ public interface ICommandeService {
     List<Commande> listeCommandesParClient(Long idClient);
     void ajouterCommandeEtaffecterAClientEtMenu(Commande commande, String identifiant, String libelleMenu);
     void findCurrentYearCommandesOrderByNote();
+    void menuPlusCommande();
 }

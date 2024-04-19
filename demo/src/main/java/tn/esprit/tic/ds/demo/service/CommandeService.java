@@ -15,6 +15,8 @@ import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -89,4 +91,31 @@ public class CommandeService  implements ICommandeService{
             System.out.println("La commande faite le "+commande.dateCommande+" d'un montant global de "+commande.totalCommande+" a une note de "+commande.note);
         }
     }
+
+    @Override
+    public void menuPlusCommande() {
+        List<Object[]> menuOrderCounts = commandeRepository.findMostOrderedMenus();
+
+
+        Map<String, Long> menuCountMap = menuOrderCounts.stream()
+                .collect(Collectors.toMap(
+                        arr -> (String) arr[0],
+                        arr -> (Long) arr[1]
+                ));
+
+
+        Long maxOrderCount = menuCountMap.values().stream()
+                .max(Long::compareTo)
+                .orElse(0L);
+
+
+        System.out.println("");
+        for (Map.Entry<String, Long> entry : menuCountMap.entrySet()) {
+            if (entry.getValue().equals(maxOrderCount)) {
+                System.out.println("Le menu le plus commandé dans votre restaurant est : " + entry.getKey()+" commandé "+ entry.getValue());
+            }
+        }
+    }
+
+
 }

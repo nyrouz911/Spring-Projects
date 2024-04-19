@@ -15,4 +15,5 @@ public interface IMenuService {
     void desaffecterChefCuisinierDuMenu(Long idMenu, Long idChef);
     List<Menu>  listeMenuSelonTypeMenuEtprixComposantsSuperieurAUnMontant(TypeMenu typeMenu, Float prixTotal);
     Menu ajoutComposantsEtMiseAjourPrixMenu(Set<Composant> composants, Long idMenu);
+
 }

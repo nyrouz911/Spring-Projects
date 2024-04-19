@@ -14,4 +14,9 @@ public interface CommandeRepository extends CrudRepository<Commande,Long> {
     List<Commande> findByDateCommandeBetweenOrderByNote(Date dFrom, Date dTo);
     @Query("SELECT c FROM Commande c WHERE YEAR(c.dateCommande) = :year ORDER BY c.note DESC")
     List<Commande>  findByDateCommandeYearOrderByNoteDesc(int year);
+    @Query("SELECT c.menus.libelleMenu, COUNT(c) " +
+            "FROM Commande c " +
+            "GROUP BY c.menus.libelleMenu " +
+            "ORDER BY COUNT(c) DESC")
+    List<Object[]> findMostOrderedMenus();
 }
