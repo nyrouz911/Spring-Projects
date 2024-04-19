@@ -1,10 +1,8 @@
 package tn.esprit.tic.ds.demo.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +12,16 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
+@Builder
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long idMenu;
     public String libelleMenu;
+    @Enumerated(EnumType.STRING)
     public TypeMenu typeMenu;
     public Float prixTotal;
     @ManyToMany(mappedBy = "menus")

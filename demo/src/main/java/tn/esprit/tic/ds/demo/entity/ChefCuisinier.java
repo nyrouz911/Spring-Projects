@@ -1,25 +1,28 @@
 package tn.esprit.tic.ds.demo.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
+@Builder
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class ChefCuisinier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long idChefCuisinier;
     public String   nom;
     public String prenom;
+    @Enumerated(EnumType.STRING)
     public TypeChef typeChef;
     @ManyToMany
-    private ArrayList<Menu> menus;
+    private List<Menu> menus;
 }

@@ -19,4 +19,6 @@ public interface MenuRepository extends CrudRepository<Menu,Long> {
 
     @Query("SELECT m FROM Menu m JOIN m.composants c JOIN DetailComposant d WHERE d.typeComposant = :typeComposant")
     List<Menu> findMenusByComponentType(@Param("typeComposant") TypeComposant typeComposant);
+    Menu findByLibelleMenu(String libelleMenu);
+
 }

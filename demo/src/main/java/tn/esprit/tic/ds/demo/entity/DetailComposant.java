@@ -1,23 +1,23 @@
 package tn.esprit.tic.ds.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
+@Builder
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class DetailComposant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long idDetailComposant;
     public Float    imc;
+    @Enumerated(EnumType.STRING)
     public TypeComposant typeComposant;
 }

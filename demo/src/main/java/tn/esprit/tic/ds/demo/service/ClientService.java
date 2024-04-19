@@ -1,6 +1,7 @@
 package tn.esprit.tic.ds.demo.service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tn.esprit.tic.ds.demo.entity.Client;
 import tn.esprit.tic.ds.demo.repository.ClientRepository;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class ClientService implements IClientService{
     ClientRepository clientRepository;
 
